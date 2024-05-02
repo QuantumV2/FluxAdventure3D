@@ -1,0 +1,6 @@
+[gd_resource type="Sky" load_steps=2 format=3 uid="uid://d2ipgsd7x1glp"]
+
+[ext_resource type="Material" uid="uid://cn4y6od2nnjn0" path="res://Env/new_panorama_sky_material.tres" id="1_mg1um"]
+
+[resource]
+sky_material = ExtResource("1_mg1um")

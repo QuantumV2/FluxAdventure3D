@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://0beyj67tqhre"]
+
+[ext_resource type="Script" path="res://Prefabs/Items/Battery.gd" id="1_7wm4n"]
+[ext_resource type="Texture2D" uid="uid://gxj35k357luj" path="res://Textures/battery.png" id="1_elij3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pdw4e"]
+height = 0.533378
+radius = 0.240868
+
+[node name="Battery" type="Node3D"]
+script = ExtResource("1_7wm4n")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0.325, 0)
+billboard = 1
+alpha_scissor_threshold = 0.0
+alpha_hash_scale = 0.0
+texture_filter = 0
+texture = ExtResource("1_elij3")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+shape = SubResource("CylinderShape3D_pdw4e")
+
+[connection signal="area_entered" from="Sprite3D/Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c43wdaiifwlc3"]
+
+[ext_resource type="PackedScene" uid="uid://je3tuq4w6l03" path="res://Player/Model/player.fbx" id="1_0lnpb"]
+
+[node name="PlayerModel" instance=ExtResource("1_0lnpb")]
+
+[node name="metarig" parent="RootNode" index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, -0.00196856, 0, 0.0452739)
+
+[node name="Skeleton3D" parent="RootNode/metarig" index="0"]
+bones/3/rotation = Quaternion(0.99997, -9.2464e-10, 1.19206e-07, -0.00775651)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.667516, -0.222693, -0.666821, -0.245317)
+bones/5/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.99997, -9.2464e-10, 1.19206e-07, -0.00775651)
+bones/7/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.667516, 0.222693, 0.666821, -0.245317)
+bones/9/scale = Vector3(1, 1, 1)

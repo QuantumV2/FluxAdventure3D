@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb0vqmoscuf1t"]
+
+[ext_resource type="Script" path="res://Prefabs/Checkpoint.gd" id="1_p643p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vehbh"]
+size = Vector3(1, 0.173065, 1)
+
+[node name="Checkpoint" type="Node3D"]
+script = ExtResource("1_p643p")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_vehbh")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://g7nj2c05x37k"]
+
+[ext_resource type="Texture2D" uid="uid://c1qsbe3ms0oic" path="res://Player/Model/lowres.png" id="1_40xuw"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_40xuw")
+uv1_triplanar_sharpness = 0.329877
+uv1_world_triplanar = true
+texture_filter = 0
+texture_repeat = false

@@ -1,0 +1,9 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://deei8ckluh0no"]
+
+[ext_resource type="Sky" uid="uid://d2ipgsd7x1glp" path="res://Env/new_sky.tres" id="1_pdoot"]
+
+[resource]
+background_mode = 2
+background_color = Color(0.511039, 0.608365, 1, 1)
+background_energy_multiplier = 0.92
+sky = ExtResource("1_pdoot")

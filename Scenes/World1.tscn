@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmrpfb3yebn38"]
+
+[ext_resource type="PackedScene" uid="uid://ssgcokb3iqku" path="res://Player/Player.tscn" id="1_04toh"]
+[ext_resource type="PackedScene" uid="uid://bsed47nxt0rwh" path="res://Prefabs/plane.tscn" id="1_tbtxi"]
+[ext_resource type="PackedScene" uid="uid://b1yxk4vuw5gmi" path="res://Prefabs/cube.tscn" id="3_dsf0d"]
+[ext_resource type="PackedScene" uid="uid://0beyj67tqhre" path="res://Prefabs/Items/Battery.tscn" id="4_ahn3j"]
+[ext_resource type="Environment" uid="uid://deei8ckluh0no" path="res://Env/new_environment.tres" id="5_vpyxm"]
+[ext_resource type="CameraAttributesPhysical" uid="uid://di5nv6b1bpew2" path="res://Env/new_camera_attributes_physical.tres" id="6_pyrfg"]
+[ext_resource type="Script" path="res://Scenes/RichTextLabel.gd" id="7_gu5gu"]
+[ext_resource type="Texture2D" uid="uid://gxj35k357luj" path="res://Textures/battery.png" id="8_cxhx5"]
+[ext_resource type="PackedScene" uid="uid://c3wjh6wcsri5a" path="res://Prefabs/death_plane.tscn" id="9_fnxnn"]
+
+[node name="World1" type="Node3D"]
+
+[node name="Plane" parent="." instance=ExtResource("1_tbtxi")]
+transform = Transform3D(2.99866, 0, 0, 0, 0.999555, 0, 0, 0, 2.99866, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_04toh")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 8.88178e-16, -0.931348, 4.07105e-08, 0.364129, -0.364129, 1.59166e-08, -0.931348, 8.25653, -6.00638, 39.517)
+light_energy = 1.49
+light_indirect_energy = 13.648
+light_bake_mode = 1
+
+[node name="Cube" parent="." instance=ExtResource("3_dsf0d")]
+transform = Transform3D(3.31647, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.52641)
+
+[node name="Cube2" parent="." instance=ExtResource("3_dsf0d")]
+transform = Transform3D(-1.44968e-07, 0, 1, 0, 1, 0, -3.31647, 0, -4.37114e-08, -2.19639, 0.884815, -1.47438)
+
+[node name="Battery" parent="." instance=ExtResource("4_ahn3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295292, 0.123007, -0.677348)
+
+[node name="Battery2" parent="." instance=ExtResource("4_ahn3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295292, 1.12301, -0.677348)
+
+[node name="Battery3" parent="." instance=ExtResource("4_ahn3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295292, 2.12301, -0.677348)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_vpyxm")
+camera_attributes = ExtResource("6_pyrfg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 1.0
+offset_right = 350.0
+offset_bottom = 50.0
+theme_override_font_sizes/normal_font_size = 30
+text = "x0"
+script = ExtResource("7_gu5gu")
+
+[node name="Battery4" type="Sprite2D" parent="."]
+position = Vector2(11, 21)
+texture = ExtResource("8_cxhx5")
+
+[node name="DeathPlane" parent="." instance=ExtResource("9_fnxnn")]
+transform = Transform3D(11.385, 0, 0, 0, 11.385, 0, 0, 0, 11.385, 0, -0.716336, 0)
