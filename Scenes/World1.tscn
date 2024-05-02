@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmrpfb3yebn38"]
+[gd_scene load_steps=11 format=3 uid="uid://cmrpfb3yebn38"]
 
 [ext_resource type="PackedScene" uid="uid://ssgcokb3iqku" path="res://Player/Player.tscn" id="1_04toh"]
 [ext_resource type="PackedScene" uid="uid://bsed47nxt0rwh" path="res://Prefabs/plane.tscn" id="1_tbtxi"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/RichTextLabel.gd" id="7_gu5gu"]
 [ext_resource type="Texture2D" uid="uid://gxj35k357luj" path="res://Textures/battery.png" id="8_cxhx5"]
 [ext_resource type="PackedScene" uid="uid://c3wjh6wcsri5a" path="res://Prefabs/death_plane.tscn" id="9_fnxnn"]
+[ext_resource type="PackedScene" uid="uid://bmm22eplmuk17" path="res://Prefabs/Dust.tscn" id="10_wtx3w"]
 
 [node name="World1" type="Node3D"]
 
@@ -62,3 +63,6 @@ texture = ExtResource("8_cxhx5")
 
 [node name="DeathPlane" parent="." instance=ExtResource("9_fnxnn")]
 transform = Transform3D(11.385, 0, 0, 0, 11.385, 0, 0, 0, 11.385, 0, -0.716336, 0)
+
+[node name="Dust" parent="." instance=ExtResource("10_wtx3w")]
+transform = Transform3D(7.89, 0, 0, 0, 7.89, 0, 0, 0, 7.89, -0.395475, 0.75048, -2.77143)

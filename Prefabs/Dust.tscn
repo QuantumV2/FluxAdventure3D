@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmm22eplmuk17"]
+
+[ext_resource type="Script" path="res://Scripts/Dust.gd" id="1_3j0py"]
+[ext_resource type="Texture2D" uid="uid://bvwxs4736c12o" path="res://Textures/Dust/dust_0.png" id="1_f5eq7"]
+[ext_resource type="Script" path="res://Scripts/DustSprite.gd" id="2_ya0a5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6e3kh"]
+
+[node name="Dust" type="Node3D"]
+transform = Transform3D(7.89, 0, 0, 0, 7.89, 0, 0, 0, 7.89, 0, 0, 0)
+script = ExtResource("1_3j0py")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1.00074, 0, 0, 0, 1.00074, 0, 0, 0, 1.00074, 0, 0, 0)
+
+[node name="DustSprite" type="Sprite3D" parent="RigidBody3D"]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_f5eq7")
+script = ExtResource("2_ya0a5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0, 0, 0)
+shape = SubResource("BoxShape3D_6e3kh")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
