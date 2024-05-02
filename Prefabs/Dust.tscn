@@ -7,7 +7,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_6e3kh"]
 
 [node name="Dust" type="Node3D"]
-transform = Transform3D(7.89, 0, 0, 0, 7.89, 0, 0, 0, 7.89, 0, 0, 0)
 script = ExtResource("1_3j0py")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]

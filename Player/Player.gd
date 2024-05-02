@@ -19,6 +19,8 @@ var coyotetimer = null
 var camorigin = null
 var shadowraycast = null
 var prev_jumping = true
+var Dust = preload("res://Prefabs/Dust.tscn")
+var rng = RandomNumberGenerator.new()
 
 var animplayer = null
 
@@ -105,6 +107,11 @@ func _physics_process(delta):
 		is_jumping = true
 		
 	if prev_jumping == true and is_jumping == false:
+		for i in range(4):
+			var dust = Dust.instantiate()
+			add_child(dust)
+			dust.position = Vector3(rng.randf_range(-.4, .4), 0.3, rng.randf_range(-.4, .4))
+			 
 		$LandSound.play()
 
 	# Get the input direction and handle the movement/deceleration.
