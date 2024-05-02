@@ -18,6 +18,7 @@ var jumpbuffer = null
 var coyotetimer = null
 var camorigin = null
 var shadowraycast = null
+var prev_jumping = true
 
 var animplayer = null
 
@@ -87,6 +88,7 @@ func _physics_process(delta):
 		_move_cam()
 	# Handle jump.
 	if (Input.is_action_just_pressed("jump") and is_on_floor()) or custom_is_on_floor():
+		$JumpSound.play()
 		velocity.y = JUMP_VELOCITY + (abs(velocity.x) + abs(velocity.z)) / 9
 		is_jumping = true
 	if Input.is_action_just_released("jump") and is_jumping:
@@ -95,10 +97,15 @@ func _physics_process(delta):
 		jumpbuffer.wait_time = 0.2
 		jumpbuffer.start()
 		
+
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		is_jumping = true
+		
+	if prev_jumping == true and is_jumping == false:
+		$LandSound.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
@@ -129,4 +136,5 @@ func _physics_process(delta):
 		animplayer.play("metarig|Jump", blend_time)
 		
 	move_and_slide()
+	prev_jumping = is_jumping
 

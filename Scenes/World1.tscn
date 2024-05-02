@@ -13,7 +13,7 @@
 [node name="World1" type="Node3D"]
 
 [node name="Plane" parent="." instance=ExtResource("1_tbtxi")]
-transform = Transform3D(2.99866, 0, 0, 0, 0.999555, 0, 0, 0, 2.99866, 0, 0, 0)
+transform = Transform3D(9.775, 0, 0, 0, 9.775, 0, 0, 0, 9.775, 0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_04toh")]
 
@@ -28,6 +28,9 @@ transform = Transform3D(3.31647, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.52641)
 
 [node name="Cube2" parent="." instance=ExtResource("3_dsf0d")]
 transform = Transform3D(-1.44968e-07, 0, 1, 0, 1, 0, -3.31647, 0, -4.37114e-08, -2.19639, 0.884815, -1.47438)
+
+[node name="Cube3" parent="." instance=ExtResource("3_dsf0d")]
+transform = Transform3D(-1.44968e-07, 0, 1, 0, 1, 0, -3.31647, 0, -4.37114e-08, 1.50498, 1.86723, -1.47438)
 
 [node name="Battery" parent="." instance=ExtResource("4_ahn3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295292, 0.123007, -0.677348)

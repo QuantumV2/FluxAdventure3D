@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ssgcokb3iqku"]
+[gd_scene load_steps=11 format=3 uid="uid://ssgcokb3iqku"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_l67lk"]
 [ext_resource type="PackedScene" uid="uid://c43wdaiifwlc3" path="res://Player/Model/player_model.tscn" id="2_0nwtv"]
 [ext_resource type="Shader" path="res://Shader/pixel.gdshader" id="3_hfgjp"]
 [ext_resource type="Texture2D" uid="uid://bi2ydm2jvd8kb" path="res://Player/player_shadow.png" id="4_0uq2a"]
 [ext_resource type="AudioStream" uid="uid://bj5kdu8vrhsue" path="res://Sounds/pickupCoin.wav" id="4_xco5x"]
+[ext_resource type="AudioStream" uid="uid://kwpkt3f7r1mu" path="res://Sounds/jump.wav" id="5_txrj6"]
+[ext_resource type="AudioStream" uid="uid://bfvexi37ab0hw" path="res://Sounds/land.wav" id="6_m2qrk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkqp2"]
 radius = 0.172385
@@ -55,6 +57,12 @@ target_position = Vector3(0, -5, 0)
 
 [node name="CoinSound" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
 stream = ExtResource("4_xco5x")
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+stream = ExtResource("5_txrj6")
+
+[node name="LandSound" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+stream = ExtResource("6_m2qrk")
 
 [node name="JumpBuffer" type="Timer" parent="."]
 wait_time = 0.1
